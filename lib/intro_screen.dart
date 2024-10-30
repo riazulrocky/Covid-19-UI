@@ -38,7 +38,7 @@ class _IntroScreenState extends State<IntroScreen> {
                       color: Colors.blue.shade800,
                     ),
                     label: Text(
-                      "Know about Covid 19",
+                      "Learn about COVID-19 and Stay Safe!",
                       style: TextStyle(color: Colors.blue.shade800),
                     ),
                     style: OutlinedButton.styleFrom(

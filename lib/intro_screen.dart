@@ -34,7 +34,8 @@ class _IntroScreenState extends State<IntroScreen> {
                           style: TextStyle(color: Colors.blue.shade900),
                         ),
                       ],
-                    ))
+                    ),
+                )
               ],
             ),
           ),

@@ -1,3 +1,4 @@
+import 'package:covid_19_app/about.dart';
 import 'package:covid_19_app/constant.dart';
 import 'package:covid_19_app/intro_screen.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: IntroScreen(),
+      home: About(),
     );
   }
 }

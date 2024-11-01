@@ -1,3 +1,4 @@
+import 'package:covid_19_app/constant.dart';
 import 'package:flutter/material.dart';
 
 class IntroScreen extends StatefulWidget {
@@ -11,48 +12,34 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        Expanded(
-          child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  alignment: Alignment.topCenter,
-                  image: AssetImage("assets/images/covid19.png")),
-            ),
-          ),
-        ),
-
-        Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+      body: Column(
+        children: [
+          Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  OutlinedButton.icon(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.coronavirus,
-                      size: 23,
-                      color: Colors.blue.shade800,
-                    ),
-                    label: Text(
-                      "Learn about COVID-19 and Stay Safe!",
-                      style: TextStyle(color: Colors.blue.shade800),
-                    ),
-                    style: OutlinedButton.styleFrom(
-                        side: BorderSide(color: Colors.blue.shade800)),
-                  ),
-                ],
-              ),
+              Image.asset("assets/images/covid19.png"),
             ],
           ),
-        )
-
-
-
-      ],
-    ));
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+            child: Column(
+              children: [
+                OutlinedButton(
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(Icons.coronavirus, color: Colors.blue.shade900),
+                        Text(
+                          "Learn about COVID-19 and Stay Safe!",
+                          style: TextStyle(color: Colors.blue.shade900),
+                        ),
+                      ],
+                    ))
+              ],
+            ),
+          )
+        ],
+      ),
+    );
   }
 }

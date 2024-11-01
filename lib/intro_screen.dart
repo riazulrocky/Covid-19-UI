@@ -30,7 +30,7 @@ class _IntroScreenState extends State<IntroScreen> {
                       children: [
                         Icon(Icons.coronavirus, color: Colors.blue.shade900),
                         Text(
-                          "Learn about COVID-19 and Stay Safe!",
+                          "Learn about COVID-19",
                           style: TextStyle(color: Colors.blue.shade900),
                         ),
                       ],

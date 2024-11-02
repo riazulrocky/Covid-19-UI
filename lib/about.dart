@@ -129,6 +129,7 @@ class _AboutState extends State<About> {
                                 color: kShadowColor,
                               ),
                             ],
+                            image: DecorationImage(image: AssetImage("assets/images/wear_mask.png"),alignment: Alignment.bottomLeft),
                           ),
                         ),
 

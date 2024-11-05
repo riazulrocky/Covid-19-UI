@@ -1,3 +1,4 @@
+import 'package:covid_19_app/about.dart';
 import 'package:covid_19_app/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,11 @@ class _IntroScreenState extends State<IntroScreen> {
             child: Column(
               children: [
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => About(),));
+
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [

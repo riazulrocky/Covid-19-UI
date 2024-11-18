@@ -1,4 +1,5 @@
 import 'package:covid_19_app/constant.dart';
+import 'package:covid_19_app/intro_screen.dart';
 import 'package:flutter/material.dart';
 
 class About extends StatefulWidget {
@@ -84,7 +85,7 @@ class _AboutState extends State<About> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Text(
-                                "Wear Face Mask",
+                                "Wear face mask",
                                 style: TextStyle(
                                     color: Colors.indigo,
                                     fontSize: 18,
@@ -99,6 +100,82 @@ class _AboutState extends State<About> {
                     ),
 
                   ),
+
+                  const SizedBox(height: 15),
+
+                  Container(
+                    height: 136,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 8),
+                          blurRadius: 24,
+                          color: kShadowColor,
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      children: [
+                        Center(
+                          child: Image.asset(
+                            "assets/images/wash_hands.png",
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                "Wash your hands",
+                                style: TextStyle(
+                                    color: Colors.indigo,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                  "Regularly wash your hands with soap and water to help prevent the spread of germs and viruses.", style: TextStyle(fontSize: 13),),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  ),
+
+                SizedBox(height: 20,),
+
+                  Container(
+                    alignment: Alignment.center,
+                    child: Column(
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => IntroScreen(),));
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.indigo
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.arrow_back, color: Colors.white),  // Back icon inside the button
+                              SizedBox(width: 8),  // Adds some spacing between the icon and the text
+                              Text(
+                                "Back to home page",
+                                style: TextStyle(color: Colors.white),  // Text style
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+
                 ],
               ),
             ),

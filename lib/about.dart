@@ -15,140 +15,106 @@ class _AboutState extends State<About> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Column(
-              children: [
-                Image.asset("assets/images/about.png"),
-              ],
+            // Top image
+            Image.asset(
+              "assets/images/about.png",
+              width: double.infinity,
+              fit: BoxFit.cover,
             ),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Row(
-                    children: [
-                      Text(
-                        "Symptoms",
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                      )
-                    ],
+                  const Text(
+                    "Symptoms",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-        
-                  SizedBox(height: 18,),
-        
+                  const SizedBox(height: 18),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        padding: EdgeInsets.all(13),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                offset: Offset(0, 10),
-                                blurRadius: 20,
-                                color: kActiveShadowColor,
-                              ),
-                            ]
-                        ),
-                        child: Column(
-                          children: [
-                            Image.asset("assets/images/headache.png", height: 85,),
-                            Text("Headache", style: TextStyle(fontWeight: FontWeight.w500),)
-                          ],
-                        ),
+                      buildSymptomCard(
+                        imagePath: "assets/images/headache.png",
+                        label: "Headache",
                       ),
-        
-                      Container(
-                        padding: EdgeInsets.all(13),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                offset: Offset(0, 10),
-                                blurRadius: 20,
-                                color: kActiveShadowColor,
-                              ),
-                            ]
-                        ),
-                        child: Column(
-                          children: [
-                            Image.asset("assets/images/cough.png", height: 85,),
-                            Text("Cough", style: TextStyle(fontWeight: FontWeight.w500),)
-                          ],
-                        ),
+                      buildSymptomCard(
+                        imagePath: "assets/images/cough.png",
+                        label: "Cough",
                       ),
-        
-                      Container(
-                        padding: EdgeInsets.all(13),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                offset: Offset(0, 10),
-                                blurRadius: 20,
-                                color: kActiveShadowColor,
-                              ),
-                            ]
-                        ),
-                        child: Column(
-                          children: [
-                            Image.asset("assets/images/fever.png", height: 85,),
-                            Text("Fever", style: TextStyle(fontWeight: FontWeight.w500),)
-                          ],
-                        ),
+                      buildSymptomCard(
+                        imagePath: "assets/images/fever.png",
+                        label: "Fever",
                       ),
                     ],
                   ),
-        
-                  SizedBox(height: 25),
-        
-                  Row(
-                    children: [
-                      Text("Prevention", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-                    ],
+                  const SizedBox(height: 25),
+                  // Prevention section
+                  const Text(
+                    "Prevention",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-        
-                  SizedBox(height: 15),
-
-                  Column(
-                    children: [
-                      Column(
-                        children: [
-                          Container(
-                            height: 136,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(0, 8),
-                                  blurRadius: 24,
-                                  color: kShadowColor,
-                                ),
-                              ],
-                            ),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/images/wear_mask.png"),
-                              ],
-                            ),
+                  const SizedBox(height: 15),
+                  Container(
+                    height: 136,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 8),
+                          blurRadius: 24,
+                          color: kShadowColor,
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      children: [
+                        Center(
+                          child: Image.asset(
+                            "assets/images/wear_mask.png",
+                            fit: BoxFit.contain,
                           ),
-
-                        ],
-                      ),
-                    ],
+                        ),
+                        Expanded(
+                          child: Text("data"),
+                        ),
+                      ],
+                    ),
                   ),
-        
-        
                 ],
               ),
-            )
+            ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget buildSymptomCard({required String imagePath, required String label}) {
+    return Container(
+      padding: const EdgeInsets.all(13),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, 10),
+            blurRadius: 20,
+            color: kActiveShadowColor,
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          Image.asset(imagePath, height: 85),
+          Text(
+            label,
+            style: const TextStyle(fontWeight: FontWeight.w500),
+          ),
+        ],
       ),
     );
   }

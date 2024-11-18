@@ -79,10 +79,25 @@ class _AboutState extends State<About> {
                           ),
                         ),
                         Expanded(
-                          child: Text("data"),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                "Wear Face Mask",
+                                style: TextStyle(
+                                    color: Colors.indigo,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                  "Wear a mask properly in crowded areas and replace it regularly to reduce virus spread.", style: TextStyle(fontSize: 13),),
+                            ],
+                          ),
                         ),
                       ],
                     ),
+
                   ),
                 ],
               ),
